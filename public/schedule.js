@@ -1,0 +1,3 @@
+export const bookingUrl='https://bookings.vibefam.com/femclub/classes';
+export function datesForWeek(offset=0,now=new Date()) { const base=new Date(now.getFullYear(),now.getMonth(),now.getDate()+offset*7);return Array.from({length:7},(_,i)=>new Date(base.getFullYear(),base.getMonth(),base.getDate()+i)); }
+export function classesForDay(day,filter='All') {const offerings=[{name:'Pilates Flow',category:'Pilates',time:'09:00',duration:50,level:'All levels'},{name:'Strong & Sculpt',category:'Strength',time:'12:30',duration:45,level:'All levels'},{name:'Slow Down',category:'Stretch',time:'18:30',duration:45,level:'Beginner friendly'}];return offerings.filter((_,i)=>(day+i)%4!==3).filter(c=>filter==='All'||c.category===filter);}
